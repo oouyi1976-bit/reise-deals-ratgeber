@@ -1,0 +1,22 @@
+---
+import { mainNav, SITE } from '../data/site';
+
+type Props = {
+	currentPath: string;
+};
+
+const { currentPath } = Astro.props;
+const isActive = (href: string) => (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+---
+
+<header class="site-header">
+	<a class="brand" href="/" aria-label={`${SITE.name} Startseite`}>
+		<span class="brand__mark">GU</span>
+		<span class="brand__text">{SITE.name}</span>
+	</a>
+	<nav class="site-nav" aria-label="Hauptnavigation">
+		{mainNav.map((item) => (
+			<a href={item.href} class:list={[isActive(item.href) && 'is-active']}>{item.label}</a>
+		))}
+	</nav>
+</header>

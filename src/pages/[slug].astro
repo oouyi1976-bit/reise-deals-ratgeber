@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentPage from '../components/ContentPage.astro';
+import { pageContents, type PageContent } from '../data/pages';
+import { createFaqSchema, createWebPageSchema } from '../data/schema';
+
+export function getStaticPaths() {
+	return pageContents.map((page) => ({
+		params: { slug: page.slug },
+		props: { page },
+	}));
+}
+
+type Props = {
+	page: PageContent;
+};
+
+const { page } = Astro.props;
+const schema = [
+	createWebPageSchema({
+		title: page.metaTitle,
+		description: page.metaDescription,
+		path: page.href,
+		image: page.image,
+	}),
+	createFaqSchema(page.faqs),
+];
+---
+
+<BaseLayout
+	title={page.metaTitle}
+	description={page.metaDescription}
+	image={page.image}
+	canonicalPath={page.href}
+	schema={schema}
+>
+	<ContentPage page={page} />
+</BaseLayout>

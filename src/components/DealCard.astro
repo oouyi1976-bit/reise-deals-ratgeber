@@ -1,0 +1,42 @@
+---
+import type { TravelDeal } from '../data/travelDeals';
+
+type Props = {
+	deal: TravelDeal;
+};
+
+const { deal } = Astro.props;
+const isReady = deal.affiliateStatus === 'ready' && deal.affiliateUrl.trim().length > 0;
+---
+
+<article class="deal-card">
+	<img src={deal.image} alt="" loading="lazy" width="800" height="520" />
+	<div class="deal-card__body">
+		<p class="deal-card__category">{deal.category}</p>
+		<h3>{deal.title}</h3>
+		<p>{deal.teaser}</p>
+		<dl class="deal-card__meta">
+			<div>
+				<dt>Ziel</dt>
+				<dd>{deal.destination}</dd>
+			</div>
+			<div>
+				<dt>Geeignet für</dt>
+				<dd>{deal.bestFor}</dd>
+			</div>
+			<div>
+				<dt>Preis-Hinweis</dt>
+				<dd>{deal.priceHint}</dd>
+			</div>
+		</dl>
+		{
+			isReady ? (
+				<a class="button button--primary" href={deal.affiliateUrl} target="_blank" rel="nofollow sponsored noopener noreferrer">
+					{deal.buttonText}
+				</a>
+			) : (
+				<span class="button button--disabled" aria-disabled="true">{deal.buttonText}</span>
+			)
+		}
+	</div>
+</article>

@@ -1,17 +1,158 @@
 ---
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import DealCard from '../components/DealCard.astro';
+import Faq from '../components/Faq.astro';
+import { categoryPages, SITE } from '../data/site';
+import { travelDeals } from '../data/travelDeals';
+import { createFaqSchema, createWebPageSchema } from '../data/schema';
+import type { FaqItem } from '../data/pages';
 
+const homeFaqs: FaqItem[] = [
+	{
+		question: 'Zeigt GünstigeUrlaubsreisen echte Preise?',
+		answer:
+			'Aktuell werden keine erfundenen Preise angezeigt. Angebotsplätze sind vorbereitet und werden erst aktiviert, wenn echte Partnerdaten oder manuell geprüfte Links vorliegen.',
+	},
+	{
+		question: 'Wie finde ich günstige Urlaubsreisen?',
+		answer:
+			'Am meisten hilft Flexibilität bei Reisezeit, Ziel, Abflughafen und Unterkunftsart. Wichtig ist außerdem, Nebenkosten wie Gepäck, Transfer und Verpflegung einzurechnen.',
+	},
+	{
+		question: 'Sind Affiliate-Links teurer?',
+		answer:
+			'Nein, durch Affiliate-Links entstehen dir normalerweise keine Mehrkosten. Die Seite kann aber eine Provision erhalten, wenn du über einen solchen Link buchst.',
+	},
+];
+
+const schema = [
+	createWebPageSchema({
+		title: SITE.title,
+		description: SITE.description,
+		path: '/',
+		image: SITE.defaultImage,
+	}),
+	createFaqSchema(homeFaqs),
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={SITE.title} description={SITE.description} image={SITE.defaultImage} canonicalPath="/" schema={schema}>
+	<section class="hero">
+		<img src="/travel-images/hero-beach.webp" alt="Sonnige Mittelmeerbucht mit türkisfarbenem Wasser" width="1600" height="900" />
+		<div class="hero__overlay"></div>
+		<div class="container hero__content">
+			<p class="eyebrow">Reise clever, nicht blind</p>
+			<h1>Günstige Urlaubsreisen finden <span class="no-wrap">– clever</span> sparen beim nächsten Urlaub</h1>
+			<p>
+				GünstigeUrlaubsreisen bündelt Spartipps, Reiseideen und Angebotskategorien für Pauschalreisen,
+				Last-Minute-Urlaub, Familienreisen, Strandurlaub und kurze Auszeiten.
+			</p>
+			<div class="hero__actions">
+				<a class="button button--primary" href="#kategorien">Kategorien entdecken</a>
+				<a class="button button--light" href="/reisetipps/">Spartipps lesen</a>
+			</div>
+		</div>
+	</section>
+
+	<main>
+		<section class="section section--sand" id="kategorien">
+			<div class="container">
+				<div class="section-heading">
+					<p class="eyebrow">Suche nach Reisestil</p>
+					<h2>Wähle deine passende Urlaubskategorie</h2>
+					<p>
+						Die Kategorien helfen dir, schneller zu vergleichen: nach Reiseart, Budget, Reisedauer und dem,
+						was vor Ort wirklich wichtig ist.
+					</p>
+				</div>
+				<div class="category-grid">
+					{categoryPages.map((category) => <CategoryCard {...category} />)}
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<div class="section-heading">
+					<p class="eyebrow">Affiliate-Struktur</p>
+					<h2>Vorbereitete Angebotskarten ohne Fake-Preise</h2>
+					<p>
+						Diese Karten sind bewusst Platzhalter. Sobald echte Partnerlinks oder geprüfte Angebote vorliegen,
+						werden sie mit klarer Kennzeichnung aktiviert.
+					</p>
+				</div>
+				<div class="deal-grid deal-grid--home">
+					{travelDeals.slice(0, 4).map((deal) => <DealCard deal={deal} />)}
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--blue">
+			<div class="container">
+				<div class="section-heading section-heading--light">
+					<p class="eyebrow">Ratgeber</p>
+					<h2>So findest du günstige Urlaubsreisen</h2>
+				</div>
+				<div class="steps-grid">
+					<article>
+						<span>01</span>
+						<h3>Reisezeit flexibel halten</h3>
+						<p>Schon wenige Tage Unterschied können bei Flug, Hotel und Pauschalreise viel ausmachen.</p>
+					</article>
+					<article>
+						<span>02</span>
+						<h3>Gesamtpreis vergleichen</h3>
+						<p>Gepäck, Transfer, Verpflegung, lokale Gebühren und Anreise gehören in die Rechnung.</p>
+					</article>
+					<article>
+						<span>03</span>
+						<h3>Leistung prüfen</h3>
+						<p>Ein Angebot ist nur dann günstig, wenn Lage, Zeiten, Zimmer und Stornoregeln passen.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container split-layout">
+				<div class="copy-block">
+					<p class="eyebrow">Saison clever nutzen</p>
+					<h2>Beste Reisezeiten zum Sparen</h2>
+					<p>
+						Die besten Sparfenster liegen häufig kurz vor oder nach der Hauptsaison. Für Strandurlaub können
+						Schultermonate attraktiv sein, Städtereisen sind oft außerhalb von Events günstiger und Kurzurlaub
+						funktioniert besonders gut unter der Woche.
+					</p>
+					<p>
+						Familien sollten Ferienrandzeiten prüfen, wenn das möglich ist. Wer ohne Flug reist, kann außerdem
+						Ziele wählen, bei denen Anreise und Unterkunft besser planbar bleiben.
+					</p>
+				</div>
+				<div class="season-list">
+					<article>
+						<h3>Frühjahr</h3>
+						<p>Städtereisen, Kurzurlaub, erste Strandziele im Süden.</p>
+					</article>
+					<article>
+						<h3>Spätsommer</h3>
+						<p>Strandurlaub nach der Hauptsaison mit oft angenehmem Wetter.</p>
+					</article>
+					<article>
+						<h3>Herbst & Winter</h3>
+						<p>Städte, Wellness, Berge, Seen und flexible Pauschalreisen.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<Faq faqs={homeFaqs} />
+
+		<section class="section section--notice">
+			<div class="container">
+				<AffiliateNotice />
+			</div>
+		</section>
+	</main>
+</BaseLayout>

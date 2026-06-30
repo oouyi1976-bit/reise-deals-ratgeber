@@ -1,0 +1,101 @@
+---
+import AffiliateNotice from './AffiliateNotice.astro';
+import CategoryCard from './CategoryCard.astro';
+import DealCard from './DealCard.astro';
+import Faq from './Faq.astro';
+import { categoryPages } from '../data/site';
+import { travelDeals } from '../data/travelDeals';
+import type { PageContent } from '../data/pages';
+
+type Props = {
+	page: PageContent;
+};
+
+const { page } = Astro.props;
+const relatedCards = page.relatedSlugs
+	.map((slug) => categoryPages.find((category) => category.slug === slug))
+	.filter(Boolean);
+const pageDeals = travelDeals.filter((deal) => deal.category === page.dealCategory);
+---
+
+<section class="subhero">
+	<img src={page.image} alt={page.imageAlt} width="1600" height="900" />
+	<div class="subhero__overlay"></div>
+	<div class="container subhero__content">
+		<p class="eyebrow">{page.eyebrow}</p>
+		<h1>{page.h1}</h1>
+		<p>{page.intro}</p>
+	</div>
+</section>
+
+<main>
+	<section class="section">
+		<div class="container split-layout">
+			<div class="copy-block">
+				<p class="eyebrow">Ratgeber</p>
+				<h2>{page.adviceTitle}</h2>
+				{page.body.map((paragraph) => <p>{paragraph}</p>)}
+			</div>
+			<aside class="info-panel">
+				<h2>Keine Lockangebote</h2>
+				<p>
+					Auf dieser Seite werden keine erfundenen Preise, Rabatte oder Testsieger angezeigt. Angebotsplätze
+					bleiben Platzhalter, bis echte Affiliate-Daten oder manuell geprüfte Links vorliegen.
+				</p>
+			</aside>
+		</div>
+	</section>
+
+	<section class="section section--sand">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">Kategorien</p>
+				<h2>Passende Reisekategorien</h2>
+			</div>
+			<div class="category-grid category-grid--compact">
+				{relatedCards.map((card) => card && <CategoryCard {...card} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">Angebotsplätze</p>
+				<h2>Vorbereitet für geprüfte Affiliate-Angebote</h2>
+				<p>
+					Diese Karten zeigen die spätere Struktur. Externe Links werden erst aktiv, wenn der jeweilige
+					Partnerlink geprüft und als bereit markiert ist.
+				</p>
+			</div>
+			<div class="deal-grid">
+				{pageDeals.map((deal) => <DealCard deal={deal} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--blue">
+		<div class="container">
+			<div class="section-heading section-heading--light">
+				<p class="eyebrow">Spartipps</p>
+				<h2>So sparst du bei dieser Reiseart</h2>
+			</div>
+			<div class="tips-grid">
+				{page.tips.map((tip, index) => (
+					<article>
+						<span>{String(index + 1).padStart(2, '0')}</span>
+						<p>{tip}</p>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<Faq faqs={page.faqs} />
+
+	<section class="section section--notice">
+		<div class="container">
+			<AffiliateNotice />
+		</div>
+	</section>
+</main>

@@ -1,0 +1,27 @@
+---
+import type { FaqItem } from '../data/pages';
+
+type Props = {
+	faqs: FaqItem[];
+	title?: string;
+};
+
+const { faqs, title = 'Häufige Fragen' } = Astro.props;
+---
+
+<section class="section faq-section">
+	<div class="container">
+		<div class="section-heading">
+			<p class="eyebrow">FAQ</p>
+			<h2>{title}</h2>
+		</div>
+		<div class="faq-list">
+			{faqs.map((faq) => (
+				<details>
+					<summary>{faq.question}</summary>
+					<p>{faq.answer}</p>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

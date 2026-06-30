@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { createWebPageSchema } from '../../data/schema';
+
+const title = 'Impressum | GünstigeUrlaubsreisen';
+const description = 'Impressum und Anbieterkennzeichnung von GünstigeUrlaubsreisen.';
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	canonicalPath="/impressum/"
+	schema={createWebPageSchema({ title, description, path: '/impressum/' })}
+>
+	<main class="legal-page">
+		<section class="section">
+			<div class="container legal-content">
+				<p class="eyebrow">Rechtliches</p>
+				<h1>Impressum</h1>
+				<p>
+					Angaben zur Anbieterkennzeichnung nach § 5 DDG. Die folgenden Platzhalter müssen vor einer
+					Veröffentlichung mit den tatsächlichen Betreiberangaben ersetzt und rechtlich geprüft werden.
+				</p>
+
+				<h2>Betreiber</h2>
+				<p>
+					GünstigeUrlaubsreisen<br />
+					[Name/Firma ergänzen]<br />
+					[Straße und Hausnummer ergänzen]<br />
+					[PLZ und Ort ergänzen]<br />
+					[Land ergänzen]
+				</p>
+
+				<h2>Kontakt</h2>
+				<p>
+					E-Mail: [E-Mail-Adresse ergänzen]<br />
+					Telefon: [Telefonnummer ergänzen, falls erforderlich]
+				</p>
+
+				<h2>Verantwortlich für Inhalte</h2>
+				<p>[Name und Anschrift der verantwortlichen Person ergänzen, falls erforderlich]</p>
+
+				<h2>Affiliate-Hinweis</h2>
+				<p>
+					Diese Website kann Affiliate-Links enthalten. Wenn Nutzer über einen solchen Link buchen, kann der
+					Betreiber eine Provision erhalten. Für Nutzer entstehen dadurch keine Mehrkosten.
+				</p>
+
+				<h2>Hinweis</h2>
+				<p>
+					Dieses Impressum ist eine technische Vorlage und ersetzt keine Rechtsberatung. Vor dem Livegang müssen
+					alle Pflichtangaben vollständig und aktuell ergänzt werden.
+				</p>
+			</div>
+		</section>
+	</main>
+</BaseLayout>
