@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-	site: 'https://www.guenstigeurlaubsreisen.de',
+	site: 'https://reise-deals-ratgeber.pages.dev',
 	output: 'static',
 });

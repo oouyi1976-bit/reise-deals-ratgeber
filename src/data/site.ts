@@ -3,7 +3,7 @@ export const SITE = {
 	title: 'GünstigeUrlaubsreisen – günstige Urlaube, Pauschalreisen & Last-Minute-Reisen finden',
 	description:
 		'Seriöse Reiseideen, Spartipps und Angebotskategorien für günstige Urlaubsreisen, Pauschalreisen, Last-Minute-Urlaub und Kurztrips.',
-	url: 'https://www.guenstigeurlaubsreisen.de',
+	url: 'https://reise-deals-ratgeber.pages.dev',
 	defaultImage: '/travel-images/hero-beach.webp',
 };
 
