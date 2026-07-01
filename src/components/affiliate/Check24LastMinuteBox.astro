@@ -1,0 +1,24 @@
+---
+import { affiliatePartners } from '../../data/travelDeals';
+
+const check24 = affiliatePartners.check24;
+---
+
+<section class="affiliate-box affiliate-box--compact" aria-labelledby="check24-last-minute-title">
+	<div class="affiliate-box__content">
+		<p class="partner-label">{check24.disclosure}</p>
+		<h2 id="check24-last-minute-title">Last-Minute-Reisen bei CHECK24 vergleichen</h2>
+		<p>
+			Bei CHECK24 kannst du kurzfristige Pauschalreisen und Last-Minute-Angebote vergleichen. Prüfe vor der
+			Buchung immer Reisedatum, Abflughafen, Gepäck, Transfer, Hotelbewertung und Stornobedingungen.
+		</p>
+		<a
+			href={check24.links.lastMinute}
+			target="_blank"
+			rel="nofollow sponsored noopener noreferrer"
+			class="button button--primary affiliate-button"
+		>
+			Last-Minute-Angebote vergleichen
+		</a>
+	</div>
+</section>

@@ -3,6 +3,7 @@ import AffiliateNotice from './AffiliateNotice.astro';
 import CategoryCard from './CategoryCard.astro';
 import DealCard from './DealCard.astro';
 import Faq from './Faq.astro';
+import Check24LastMinuteBox from './affiliate/Check24LastMinuteBox.astro';
 import Check24PackageTravelBox from './affiliate/Check24PackageTravelBox.astro';
 import Check24RentalCarBanner from './affiliate/Check24RentalCarBanner.astro';
 import Check24RentalCarWidget from './affiliate/Check24RentalCarWidget.astro';
@@ -49,6 +50,16 @@ const hasInternalLinks = page.internalLinks && page.internalLinks.length > 0;
 			</aside>
 		</div>
 	</section>
+
+	{
+		page.slug === 'last-minute-urlaub' && (
+			<section class="section section--affiliate">
+				<div class="container">
+					<Check24LastMinuteBox />
+				</div>
+			</section>
+		)
+	}
 
 	{
 		page.slug === 'pauschalreisen' && (

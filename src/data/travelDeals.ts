@@ -21,6 +21,8 @@ export const affiliatePartners = {
 		type: 'travel-comparison',
 		disclosure: 'Partnerlink',
 		links: {
+			lastMinute:
+				'https://a.check24.net/misc/click.php?aid=18&pid=1173958&target_url=https%3A%2F%2Fwww.check24.net%2Flast-minute%2F%3Fpid%3D1173958',
 			packageTravel:
 				'https://a.check24.net/misc/click.php?pid=1173958&aid=18&deep=pauschalreisen-vergleich&cat=9',
 			rentalCar: 'https://a.check24.net/misc/click.php?pid=1173958&aid=215&deep=mietwagen-preisvergleich&cat=10',
