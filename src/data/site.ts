@@ -99,12 +99,23 @@ export const categoryPages: CategoryPage[] = [
 		imageAlt: 'Ruhiger See mit Holzsteg, Bergen und Wochenendtasche',
 		tag: '2 bis 4 Tage',
 	},
+	{
+		slug: 'mietwagen',
+		href: '/mietwagen/',
+		title: 'Mietwagen vergleichen',
+		shortTitle: 'Mietwagen',
+		description: 'Mietwagen im Urlaub vergleichen und Versicherung, Kaution, Tankregelung und Abholung prüfen.',
+		image: '/travel-images/budget-suitcase.webp',
+		imageAlt: 'Kleiner Koffer und Reiseutensilien auf einem sonnigen Balkon',
+		tag: 'Vor Ort mobil',
+	},
 ];
 
 export const mainNav = [
 	{ href: '/', label: 'Start' },
 	{ href: '/last-minute-urlaub/', label: 'Last Minute' },
 	{ href: '/pauschalreisen/', label: 'Pauschalreisen' },
+	{ href: '/mietwagen/', label: 'Mietwagen' },
 	{ href: '/urlaub-unter-500-euro/', label: 'Unter 500 Euro' },
 	{ href: '/reisetipps/', label: 'Reisetipps' },
 ];

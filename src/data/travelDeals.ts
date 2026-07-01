@@ -15,6 +15,26 @@ export type TravelDeal = {
 
 const placeholderHint = 'Konkrete Preise werden erst angezeigt, wenn ein Angebot manuell geprüft oder per Partnerdaten angebunden ist.';
 
+export const affiliatePartners = {
+	check24: {
+		name: 'CHECK24',
+		type: 'travel-comparison',
+		disclosure: 'Partnerlink',
+		links: {
+			packageTravel:
+				'https://a.check24.net/misc/click.php?pid=1173958&aid=18&deep=pauschalreisen-vergleich&cat=9',
+			rentalCar: 'https://a.check24.net/misc/click.php?pid=1173958&aid=215&deep=mietwagen-preisvergleich&cat=10',
+		},
+		banners: {
+			packageTravel:
+				'https://a.check24.net/misc/click.php?pid=1173958&aid=259&deep=pauschalreisen-vergleich&cat=9',
+			packageTravelImage: 'https://a.check24.net/misc/view.php?pid=1173958&aid=259&cat=9',
+			rentalCar: 'https://a.check24.net/misc/click.php?pid=1173958&aid=215&deep=mietwagen-preisvergleich&cat=10',
+			rentalCarImage: 'https://a.check24.net/misc/view.php?pid=1173958&aid=215&cat=10',
+		},
+	},
+};
+
 export const travelDeals: TravelDeal[] = [
 	{
 		title: 'Spontane Sonnenreise',
@@ -32,13 +52,13 @@ export const travelDeals: TravelDeal[] = [
 		title: 'Pauschalreise mit Hotel & Transfer',
 		destination: 'Beliebte Baderegionen',
 		category: 'Pauschalreisen',
-		teaser: 'Platzhalter für geprüfte Pauschalreisen, bei denen Flug, Hotel und Transfer transparent zusammenkommen.',
+		teaser: 'CHECK24-Partnerlink für den Vergleich von Pauschalreisen verschiedener Anbieter. Leistungen bitte vor der Buchung genau prüfen.',
 		bestFor: 'Reisende, die möglichst wenig selbst organisieren möchten',
-		priceHint: placeholderHint,
-		affiliateStatus: 'placeholder',
-		affiliateUrl: '',
+		priceHint: 'Externer Vergleich über CHECK24. Es werden hier keine eigenen Preise, Rabatte oder Rankings behauptet.',
+		affiliateStatus: 'ready',
+		affiliateUrl: affiliatePartners.check24.links.packageTravel,
 		image: '/travel-images/hotel-pool.webp',
-		buttonText: 'Angebot folgt',
+		buttonText: 'Pauschalreisen vergleichen',
 	},
 	{
 		title: 'Familienfreundlicher Sommerurlaub',
@@ -123,5 +143,18 @@ export const travelDeals: TravelDeal[] = [
 		affiliateUrl: '',
 		image: '/travel-images/travel-tips-desk.webp',
 		buttonText: 'Angebot folgt',
+	},
+	{
+		title: 'Mietwagen für den Urlaub vergleichen',
+		destination: 'Urlaubsziele mit eigener Mobilität',
+		category: 'Mietwagen',
+		teaser:
+			'CHECK24-Partnerlink für Mietwagenvergleiche. Prüfe vor der Buchung Versicherung, Kaution, Tankregelung und Abholstation.',
+		bestFor: 'Reisende, die vor Ort flexibel bleiben möchten',
+		priceHint: 'Externer Vergleich über CHECK24. Es werden hier keine eigenen Preise oder Rabatte behauptet.',
+		affiliateStatus: 'ready',
+		affiliateUrl: affiliatePartners.check24.links.rentalCar,
+		image: '/travel-images/budget-suitcase.webp',
+		buttonText: 'Mietwagen vergleichen',
 	},
 ];

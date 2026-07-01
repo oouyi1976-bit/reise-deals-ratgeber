@@ -1,0 +1,32 @@
+---
+import { affiliatePartners } from '../../data/travelDeals';
+
+const check24 = affiliatePartners.check24;
+---
+
+<section class="affiliate-box affiliate-box--compact" aria-labelledby="check24-mietwagen-banner-title">
+	<div class="affiliate-box__content">
+		<p class="partner-label">{check24.disclosure}</p>
+		<h2 id="check24-mietwagen-banner-title">Alternative: Mietwagen direkt vergleichen</h2>
+		<p>
+			Wenn du das Widget nicht laden möchtest, kannst du den CHECK24 Mietwagen-Vergleich auch direkt in einem
+			neuen Tab öffnen.
+		</p>
+	</div>
+	<a
+		class="check24-horizontal-banner"
+		href={check24.banners.rentalCar}
+		target="_blank"
+		rel="nofollow sponsored noopener noreferrer"
+		aria-label="CHECK24 Mietwagen vergleichen"
+	>
+		<img
+			src={check24.banners.rentalCarImage}
+			width="468"
+			height="60"
+			alt="CHECK24 Mietwagen Vergleich"
+			loading="lazy"
+			decoding="async"
+		/>
+	</a>
+</section>

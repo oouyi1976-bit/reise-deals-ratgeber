@@ -19,6 +19,11 @@ export type PageContent = {
 	tips: string[];
 	faqs: FaqItem[];
 	relatedSlugs: string[];
+	internalLinks?: {
+		href: string;
+		title: string;
+		description: string;
+	}[];
 };
 
 export const pageContents: PageContent[] = [
@@ -106,7 +111,7 @@ export const pageContents: PageContent[] = [
 					'Ja, das ist möglich. Es hängt aber stark von Ziel, Saison und Verfügbarkeit ab. Deshalb sollten Paket und Einzelbuchung bei flexiblen Reisen beide geprüft werden.',
 			},
 		],
-		relatedSlugs: ['last-minute-urlaub', 'all-inclusive-urlaub', 'familienurlaub-guenstig', 'strandurlaub-guenstig'],
+		relatedSlugs: ['last-minute-urlaub', 'all-inclusive-urlaub', 'familienurlaub-guenstig', 'strandurlaub-guenstig', 'mietwagen'],
 	},
 	{
 		slug: 'all-inclusive-urlaub',
@@ -411,10 +416,68 @@ export const pageContents: PageContent[] = [
 		relatedSlugs: [
 			'urlaub-unter-500-euro',
 			'pauschalreisen',
+			'mietwagen',
 			'last-minute-urlaub',
 			'kurzurlaub',
 			'staedtereisen-guenstig',
 			'strandurlaub-guenstig',
+		],
+	},
+	{
+		slug: 'mietwagen',
+		href: '/mietwagen/',
+		metaTitle: 'Mietwagen günstig vergleichen | GünstigeUrlaubsreisen',
+		metaDescription:
+			'Tipps zum Mietwagen-Vergleich im Urlaub: Versicherung, Kaution, Tankregelung, Kilometer und Abholung beachten. Mit CHECK24 Mietwagen vergleichen.',
+		h1: 'Mietwagen günstig vergleichen – Tipps für Urlaub & Reise',
+		eyebrow: 'Vor Ort flexibel',
+		intro:
+			'Ein Mietwagen kann im Urlaub praktisch sein, wenn Strände, Ausflugsziele oder Unterkünfte schlecht mit Bus und Bahn erreichbar sind. Damit der Vergleich fair bleibt, solltest du nicht nur auf den Einstiegspreis schauen.',
+		image: '/travel-images/budget-suitcase.webp',
+		imageAlt: 'Kleiner Koffer und Reiseutensilien auf einem sonnigen Balkon',
+		dealCategory: 'Mietwagen',
+		adviceTitle: 'Worauf du beim Mietwagen-Vergleich achten solltest',
+		body: [
+			'Günstige Mietwagen wirken oft erst im Detail wirklich vergleichbar. Versicherung, Kaution, Tankregelung, Kilometer und Abholzeit können den Unterschied zwischen einem guten Angebot und unnötigem Stress machen.',
+			'Prüfe vor der Buchung, ob die Station zu deiner Anreise passt und ob alle Fahrer, Kindersitze oder Zusatzleistungen korrekt angegeben sind. So vermeidest du teure Überraschungen am Schalter.',
+		],
+		tips: [
+			'Vollkasko ohne Selbstbeteiligung prüfen.',
+			'Faire Tankregelung wählen, zum Beispiel voll/voll.',
+			'Kilometerbegrenzung beachten.',
+			'Kaution und Kreditkarte prüfen.',
+			'Abholstation und Uhrzeit kontrollieren.',
+			'Zusatzfahrer und Kindersitze vorher prüfen.',
+		],
+		faqs: [
+			{
+				question: 'Welche Versicherung ist beim Mietwagen wichtig?',
+				answer:
+					'Häufig sinnvoll ist eine Vollkasko ohne Selbstbeteiligung oder mit Erstattung der Selbstbeteiligung. Prüfe außerdem Glas, Reifen, Unterboden und Ausschlüsse im Detail.',
+			},
+			{
+				question: 'Was bedeutet faire Tankregelung?',
+				answer:
+					'Bei voll/voll bekommst du den Wagen vollgetankt und gibst ihn vollgetankt zurück. Das ist oft transparenter als vorausbezahlte Tankmodelle.',
+			},
+			{
+				question: 'Brauche ich eine Kreditkarte?',
+				answer:
+					'Viele Vermieter verlangen für die Kaution eine Kreditkarte auf den Namen des Hauptfahrers. Das solltest du vor der Buchung prüfen.',
+			},
+			{
+				question: 'Lädt das CHECK24 Mietwagen-Widget sofort?',
+				answer:
+					'Nein. Das Widget wird auf dieser Seite erst geladen, wenn du den Button zum Laden des CHECK24 Mietwagen-Vergleichs anklickst.',
+			},
+		],
+		relatedSlugs: ['pauschalreisen', 'last-minute-urlaub', 'familienurlaub-guenstig'],
+		internalLinks: [
+			{
+				href: '/reisetipps/',
+				title: 'Reisetipps zum Sparen',
+				description: 'Mehr Hinweise zu Nebenkosten, Reisezeiten und cleverer Urlaubsplanung.',
+			},
 		],
 	},
 ];

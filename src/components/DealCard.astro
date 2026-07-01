@@ -31,9 +31,12 @@ const isReady = deal.affiliateStatus === 'ready' && deal.affiliateUrl.trim().len
 		</dl>
 		{
 			isReady ? (
-				<a class="button button--primary" href={deal.affiliateUrl} target="_blank" rel="nofollow sponsored noopener noreferrer">
-					{deal.buttonText}
-				</a>
+				<div class="deal-card__action">
+					<p class="partner-label">Partnerlink</p>
+					<a class="button button--primary" href={deal.affiliateUrl} target="_blank" rel="nofollow sponsored noopener noreferrer">
+						{deal.buttonText}
+					</a>
+				</div>
 			) : (
 				<span class="button button--disabled" aria-disabled="true">{deal.buttonText}</span>
 			)

@@ -220,6 +220,10 @@ h3 {
 	color: var(--color-white);
 }
 
+.section--affiliate {
+	background: linear-gradient(180deg, #f8fbfb, var(--color-white));
+}
+
 .section--notice {
 	padding-block: 44px 82px;
 	background: linear-gradient(180deg, var(--color-white), #f8fbfb);
@@ -361,6 +365,23 @@ h3 {
 	font-size: 14px;
 }
 
+.deal-card__action,
+.affiliate-stack {
+	display: grid;
+	gap: 12px;
+}
+
+.partner-label {
+	width: fit-content;
+	padding: 5px 9px;
+	border-radius: 999px;
+	background: rgba(18, 154, 154, 0.12);
+	color: var(--color-turquoise-dark);
+	font-size: 12px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
 .button {
 	display: inline-flex;
 	align-items: center;
@@ -462,6 +483,95 @@ h3 {
 .season-list h3 {
 	font-size: 20px;
 	margin-bottom: 8px;
+}
+
+.affiliate-box,
+.affiliate-widget {
+	display: grid;
+	gap: 24px;
+	padding: 28px;
+	background: var(--color-white);
+	border: 1px solid rgba(18, 154, 154, 0.18);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-soft);
+}
+
+.affiliate-box {
+	grid-template-columns: minmax(0, 1fr) minmax(120px, 220px);
+	align-items: center;
+}
+
+.affiliate-box--compact {
+	grid-template-columns: minmax(0, 1fr) minmax(240px, 468px);
+}
+
+.affiliate-box__content,
+.affiliate-widget__intro {
+	display: grid;
+	gap: 14px;
+	align-content: start;
+}
+
+.affiliate-box h2,
+.affiliate-widget h2 {
+	font-size: 28px;
+}
+
+.affiliate-box p:not(.partner-label),
+.affiliate-widget p:not(.partner-label),
+.related-link-list span {
+	color: var(--color-muted);
+}
+
+.affiliate-box__banner {
+	display: flex;
+	justify-content: center;
+}
+
+.affiliate-box__banner img,
+.check24-horizontal-banner img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+
+.check24-horizontal-banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius);
+	background: #f8fbfb;
+}
+
+.affiliate-widget__mount {
+	min-height: 104px;
+	padding: 14px;
+	border: 1px dashed rgba(18, 154, 154, 0.35);
+	border-radius: var(--radius);
+	background: #f8fbfb;
+}
+
+.related-link-list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+	margin-top: 18px;
+}
+
+.related-link-list a {
+	display: grid;
+	gap: 6px;
+	padding: 18px;
+	background: var(--color-white);
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius);
+	box-shadow: 0 10px 30px rgba(9, 36, 61, 0.06);
+}
+
+.related-link-list strong {
+	color: var(--color-blue);
 }
 
 .faq-section {
@@ -575,6 +685,11 @@ h3 {
 	.tips-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
+	.affiliate-box,
+	.affiliate-box--compact {
+		grid-template-columns: 1fr;
+	}
 }
 
 @media (max-width: 760px) {
@@ -637,6 +752,7 @@ h3 {
 	.steps-grid,
 	.tips-grid,
 	.split-layout,
+	.related-link-list,
 	.footer-grid {
 		grid-template-columns: 1fr;
 	}

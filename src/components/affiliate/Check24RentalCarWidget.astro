@@ -1,0 +1,55 @@
+<section class="affiliate-widget" aria-labelledby="check24-mietwagen-widget-title">
+	<div class="affiliate-widget__intro">
+		<p class="partner-label">Partnerlink</p>
+		<h2 id="check24-mietwagen-widget-title">CHECK24 Mietwagen-Vergleich laden</h2>
+		<p>
+			Das externe CHECK24 Mietwagen-Widget wird erst nach deinem Klick geladen. Dabei können Daten an CHECK24
+			oder beteiligte technische Dienstleister übertragen werden.
+		</p>
+		<button class="button button--primary" type="button" data-check24-widget-button>
+			CHECK24 Mietwagen-Vergleich laden
+		</button>
+	</div>
+	<div class="affiliate-widget__mount" data-check24-widget-mount></div>
+</section>
+
+<script is:inline>
+	(() => {
+		const button = document.querySelector('[data-check24-widget-button]');
+		const mount = document.querySelector('[data-check24-widget-mount]');
+
+		if (!button || !mount) return;
+
+		button.addEventListener(
+			'click',
+			() => {
+				button.setAttribute('disabled', 'disabled');
+				button.textContent = 'CHECK24 Mietwagen-Vergleich wird geladen';
+
+				if (!document.querySelector('link[data-check24-rentalcar-css]')) {
+					const stylesheet = document.createElement('link');
+					stylesheet.rel = 'stylesheet';
+					stylesheet.type = 'text/css';
+					stylesheet.href = 'https://files.check24.net/widgets/rentalcarbillboard.css';
+					stylesheet.setAttribute('data-check24-rentalcar-css', 'true');
+					document.head.appendChild(stylesheet);
+				}
+
+				const widget = document.createElement('div');
+				widget.id = 'c24pp-rentalcar-widget49001';
+				widget.style.width = '100%';
+				widget.style.minHeight = '100px';
+				widget.dataset.target = '_self';
+				widget.dataset.whitelabel = 'no';
+				widget.dataset.form = 'https://www.check24.net/mietwagen-preisvergleich/';
+				mount.appendChild(widget);
+
+				const script = document.createElement('script');
+				script.async = true;
+				script.src = 'https://files.check24.net/widgets/1173958/c24pp-rentalcar-widget49001/rentalcarbillboard.js';
+				document.body.appendChild(script);
+			},
+			{ once: true }
+		);
+	})();
+</script>

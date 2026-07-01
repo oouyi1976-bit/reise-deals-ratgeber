@@ -3,6 +3,9 @@ import AffiliateNotice from './AffiliateNotice.astro';
 import CategoryCard from './CategoryCard.astro';
 import DealCard from './DealCard.astro';
 import Faq from './Faq.astro';
+import Check24PackageTravelBox from './affiliate/Check24PackageTravelBox.astro';
+import Check24RentalCarBanner from './affiliate/Check24RentalCarBanner.astro';
+import Check24RentalCarWidget from './affiliate/Check24RentalCarWidget.astro';
 import { categoryPages } from '../data/site';
 import { travelDeals } from '../data/travelDeals';
 import type { PageContent } from '../data/pages';
@@ -16,6 +19,7 @@ const relatedCards = page.relatedSlugs
 	.map((slug) => categoryPages.find((category) => category.slug === slug))
 	.filter(Boolean);
 const pageDeals = travelDeals.filter((deal) => deal.category === page.dealCategory);
+const hasInternalLinks = page.internalLinks && page.internalLinks.length > 0;
 ---
 
 <section class="subhero">
@@ -46,6 +50,16 @@ const pageDeals = travelDeals.filter((deal) => deal.category === page.dealCatego
 		</div>
 	</section>
 
+	{
+		page.slug === 'pauschalreisen' && (
+			<section class="section section--affiliate">
+				<div class="container">
+					<Check24PackageTravelBox />
+				</div>
+			</section>
+		)
+	}
+
 	<section class="section section--sand">
 		<div class="container">
 			<div class="section-heading">
@@ -55,24 +69,51 @@ const pageDeals = travelDeals.filter((deal) => deal.category === page.dealCatego
 			<div class="category-grid category-grid--compact">
 				{relatedCards.map((card) => card && <CategoryCard {...card} />)}
 			</div>
+			{
+				hasInternalLinks && (
+					<div class="related-link-list">
+						{page.internalLinks?.map((link) => (
+							<a href={link.href}>
+								<strong>{link.title}</strong>
+								<span>{link.description}</span>
+							</a>
+						))}
+					</div>
+				)
+			}
 		</div>
 	</section>
 
-	<section class="section">
-		<div class="container">
-			<div class="section-heading">
-				<p class="eyebrow">Angebotsplätze</p>
-				<h2>Vorbereitet für geprüfte Affiliate-Angebote</h2>
-				<p>
-					Diese Karten zeigen die spätere Struktur. Externe Links werden erst aktiv, wenn der jeweilige
-					Partnerlink geprüft und als bereit markiert ist.
-				</p>
-			</div>
-			<div class="deal-grid">
-				{pageDeals.map((deal) => <DealCard deal={deal} />)}
-			</div>
-		</div>
-	</section>
+	{
+		page.slug === 'mietwagen' && (
+			<section class="section section--affiliate">
+				<div class="container affiliate-stack">
+					<Check24RentalCarWidget />
+					<Check24RentalCarBanner />
+				</div>
+			</section>
+		)
+	}
+
+	{
+		pageDeals.length > 0 && (
+			<section class="section">
+				<div class="container">
+					<div class="section-heading">
+						<p class="eyebrow">Angebotsplätze</p>
+						<h2>Geprüfte Partnerlinks und vorbereitete Angebotskarten</h2>
+						<p>
+							Echte Partnerlinks sind klar gekennzeichnet. Platzhalter bleiben deaktiviert, bis der jeweilige
+							Partnerlink geprüft und als bereit markiert ist.
+						</p>
+					</div>
+					<div class="deal-grid">
+						{pageDeals.map((deal) => <DealCard deal={deal} />)}
+					</div>
+				</div>
+			</section>
+		)
+	}
 
 	<section class="section section--blue">
 		<div class="container">
