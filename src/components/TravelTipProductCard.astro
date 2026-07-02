@@ -1,0 +1,42 @@
+---
+import type { TravelTipProduct } from '../data/travelTipProducts';
+
+type Props = {
+	product: TravelTipProduct;
+};
+
+const { product } = Astro.props;
+---
+
+<article class="travel-tip-card">
+	<img
+		src={product.image}
+		alt={`${product.title} als neutrales Reisemagazinbild`}
+		loading="lazy"
+		width="1000"
+		height="760"
+	/>
+	<div class="travel-tip-card__body">
+		<div class="travel-tip-card__meta">
+			<span>Partnerlink</span>
+			<span>{product.provider}</span>
+		</div>
+		<p class="travel-tip-card__category">{product.category}</p>
+		<h3>{product.title}</h3>
+		<p>{product.description}</p>
+		<dl class="travel-tip-card__details">
+			<div>
+				<dt>Geeignet für</dt>
+				<dd>{product.bestFor}</dd>
+			</div>
+		</dl>
+		<a
+			class="button button--primary travel-tip-card__button"
+			href={product.affiliateUrl}
+			target="_blank"
+			rel="nofollow sponsored noopener noreferrer"
+		>
+			{product.buttonText}
+		</a>
+	</div>
+</article>

@@ -265,6 +265,7 @@ h3 {
 .category-card,
 .deal-card,
 .product-card,
+.travel-tip-card,
 .steps-grid article,
 .tips-grid article,
 .season-list article,
@@ -276,6 +277,7 @@ h3 {
 .category-card,
 .deal-card,
 .product-card,
+.travel-tip-card,
 .season-list article,
 .info-panel {
 	background: var(--color-white);
@@ -299,7 +301,8 @@ h3 {
 
 .category-card img,
 .deal-card img,
-.product-card img {
+.product-card img,
+.travel-tip-card img {
 	width: 100%;
 	aspect-ratio: 4 / 3;
 	object-fit: cover;
@@ -307,7 +310,8 @@ h3 {
 
 .category-card__body,
 .deal-card__body,
-.product-card__body {
+.product-card__body,
+.travel-tip-card__body {
 	display: grid;
 	gap: 12px;
 	padding: 20px;
@@ -315,7 +319,8 @@ h3 {
 
 .category-card__tag,
 .deal-card__category,
-.product-card__category {
+.product-card__category,
+.travel-tip-card__category {
 	font-size: 13px;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -327,6 +332,8 @@ h3 {
 .deal-card dd,
 .product-card p:not(.product-card__category),
 .product-card dd,
+.travel-tip-card p:not(.travel-tip-card__category),
+.travel-tip-card dd,
 .season-list p,
 .steps-grid p,
 .tips-grid p,
@@ -482,6 +489,83 @@ h3 {
 }
 
 .product-card__button {
+	width: 100%;
+	margin-top: 4px;
+}
+
+.travel-tip-products__notice {
+	max-width: 780px;
+	margin: -10px 0 26px;
+	padding: 18px 20px;
+	background: rgba(255, 255, 255, 0.78);
+	border: 1px solid rgba(18, 154, 154, 0.18);
+	border-radius: var(--radius);
+	color: var(--color-muted);
+}
+
+.travel-tip-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.travel-tip-card {
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	border: 1px solid rgba(217, 227, 232, 0.86);
+}
+
+.travel-tip-card h3 {
+	font-size: 21px;
+}
+
+.travel-tip-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.travel-tip-card__meta span {
+	width: fit-content;
+	padding: 5px 9px;
+	border-radius: 999px;
+	background: rgba(18, 154, 154, 0.12);
+	color: var(--color-turquoise-dark);
+	font-size: 12px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.travel-tip-card__meta span + span {
+	background: #fff7ec;
+	color: #684923;
+}
+
+.travel-tip-card__details {
+	margin: 0;
+}
+
+.travel-tip-card__details div {
+	display: grid;
+	gap: 3px;
+	padding-top: 10px;
+	border-top: 1px solid var(--color-line);
+}
+
+.travel-tip-card__details dt {
+	font-size: 12px;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: var(--color-blue);
+}
+
+.travel-tip-card__details dd {
+	margin: 0;
+	font-size: 14px;
+}
+
+.travel-tip-card__button {
 	width: 100%;
 	margin-top: 4px;
 }
@@ -830,6 +914,7 @@ h3 {
 	.deal-grid--home,
 	.product-category-nav,
 	.product-grid,
+	.travel-tip-grid,
 	.tips-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -900,6 +985,7 @@ h3 {
 	.product-intro-grid,
 	.product-category-nav,
 	.product-grid,
+	.travel-tip-grid,
 	.steps-grid,
 	.tips-grid,
 	.split-layout,

@@ -3,12 +3,14 @@ import AffiliateNotice from './AffiliateNotice.astro';
 import CategoryCard from './CategoryCard.astro';
 import DealCard from './DealCard.astro';
 import Faq from './Faq.astro';
+import TravelTipProductCard from './TravelTipProductCard.astro';
 import Check24LastMinuteBox from './affiliate/Check24LastMinuteBox.astro';
 import Check24PackageTravelBox from './affiliate/Check24PackageTravelBox.astro';
 import Check24RentalCarBanner from './affiliate/Check24RentalCarBanner.astro';
 import Check24RentalCarWidget from './affiliate/Check24RentalCarWidget.astro';
 import { categoryPages } from '../data/site';
 import { travelDeals } from '../data/travelDeals';
+import { travelTipProducts } from '../data/travelTipProducts';
 import type { PageContent } from '../data/pages';
 
 type Props = {
@@ -142,6 +144,31 @@ const hasInternalLinks = page.internalLinks && page.internalLinks.length > 0;
 			</div>
 		</div>
 	</section>
+
+	{
+		page.slug === 'reisetipps' && (
+			<section class="section section--sand travel-tip-products">
+				<div class="container">
+					<div class="section-heading">
+						<p class="eyebrow">Partner-Ratgeber</p>
+						<h2>Reiseratgeber &amp; Insel-Guides</h2>
+						<p>
+							Hier findest du ausgewählte Reise-Ratgeber, Bildbände und Insel-Guides. Die Links führen zu
+							externen Partnerseiten. Prüfe vor dem Kauf immer selbst, ob Inhalt, Preis und Anbieter zu dir
+							passen.
+						</p>
+					</div>
+					<p class="travel-tip-products__notice">
+						Hinweis: Die folgenden Karten enthalten Partnerlinks. Wenn du darüber kaufst, erhalten wir ggf. eine
+						Provision. Für dich entstehen keine Mehrkosten.
+					</p>
+					<div class="travel-tip-grid">
+						{travelTipProducts.map((product) => <TravelTipProductCard product={product} />)}
+					</div>
+				</div>
+			</section>
+		)
+	}
 
 	<Faq faqs={page.faqs} />
 
