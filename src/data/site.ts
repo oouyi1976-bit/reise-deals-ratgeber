@@ -109,14 +109,23 @@ export const categoryPages: CategoryPage[] = [
 		imageAlt: 'Kleiner Koffer und Reiseutensilien auf einem sonnigen Balkon',
 		tag: 'Vor Ort mobil',
 	},
+	{
+		slug: 'produkte-fuer-den-urlaub',
+		href: '/produkte-fuer-den-urlaub/',
+		title: 'Produkte für den Urlaub',
+		shortTitle: 'Reiseprodukte',
+		description:
+			'Praktische Reiseprodukte für Flug, Hotel, Strand, Mietwagen und Familienurlaub – mit neutralen Bildern und klaren Empfehlungen ohne Fake-Bewertungen.',
+		image: '/travel-product-images/product-hero.webp',
+		imageAlt: 'Neutrale Reiseprodukte wie Koffer, Packtaschen und Nackenkissen auf einer sonnigen Terrasse',
+		tag: 'Praktisch packen',
+	},
 ];
 
 export const mainNav = [
-	{ href: '/', label: 'Start' },
-	{ href: '/last-minute-urlaub/', label: 'Last Minute' },
 	{ href: '/pauschalreisen/', label: 'Pauschalreisen' },
 	{ href: '/mietwagen/', label: 'Mietwagen' },
-	{ href: '/urlaub-unter-500-euro/', label: 'Unter 500 Euro' },
+	{ href: '/produkte-fuer-den-urlaub/', label: 'Produkte für den Urlaub' },
 	{ href: '/reisetipps/', label: 'Reisetipps' },
 ];
 

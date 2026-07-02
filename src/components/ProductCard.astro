@@ -1,0 +1,51 @@
+---
+import type { TravelProduct } from '../data/travelProducts';
+
+type Props = {
+	product: TravelProduct;
+};
+
+const { product } = Astro.props;
+const isReady = product.affiliateStatus === 'ready' && product.affiliateUrl;
+---
+
+<article class="product-card">
+	<img
+		src={product.image}
+		alt={`${product.title} als neutrales Reiseproduktbild`}
+		loading="lazy"
+		width="1000"
+		height="760"
+	/>
+	<div class="product-card__body">
+		<p class="product-card__category">{product.category}</p>
+		<h3>{product.title}</h3>
+		<p>{product.shortDescription}</p>
+		<dl class="product-card__details">
+			<div>
+				<dt>Geeignet für</dt>
+				<dd>{product.bestFor}</dd>
+			</div>
+			<div>
+				<dt>Warum praktisch?</dt>
+				<dd>{product.whyUseful}</dd>
+			</div>
+		</dl>
+		{
+			isReady ? (
+				<a
+					class="button button--primary product-card__button"
+					href={product.affiliateUrl}
+					target="_blank"
+					rel="nofollow sponsored noopener noreferrer"
+				>
+					{product.buttonText}
+				</a>
+			) : (
+				<span class="button button--disabled product-card__button" aria-disabled="true">
+					{product.buttonText}
+				</span>
+			)
+		}
+	</div>
+</article>

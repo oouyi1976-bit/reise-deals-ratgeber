@@ -1,0 +1,226 @@
+---
+import AffiliateNotice from '../../components/AffiliateNotice.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Faq from '../../components/Faq.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { createFaqSchema, createWebPageSchema } from '../../data/schema';
+import { travelProducts, productCategories } from '../../data/travelProducts';
+import type { FaqItem } from '../../data/pages';
+
+const title = 'Produkte für den Urlaub | GünstigeUrlaubsreisen';
+const description =
+	'Praktische Reiseprodukte für Urlaub, Flug, Hotel, Strand, Mietwagen und Familienreisen. Mit Amazon-Partnerlinks, neutralen Bildern und hilfreichen Tipps.';
+const path = '/produkte-fuer-den-urlaub/';
+const heroImage = '/travel-product-images/product-hero.webp';
+const intro =
+	'Hier findest du praktische Produkte für Reise, Flug, Hotel, Strand und Mietwagen. Die Auswahl soll helfen, besser vorbereitet zu reisen – ohne erfundene Bewertungen, Fake-Testsieger oder kopierte Produktbilder.';
+
+const categorySlug = (value: string) =>
+	value
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.replace(/&/g, 'und')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
+
+const categoryGroups = productCategories.map((category) => ({
+	category,
+	slug: categorySlug(category),
+	products: travelProducts.filter((product) => product.category === category),
+}));
+
+const readyProducts = travelProducts.filter((product) => product.affiliateStatus === 'ready');
+const placeholderProducts = travelProducts.filter((product) => product.affiliateStatus === 'placeholder');
+
+const productFaqs: FaqItem[] = [
+	{
+		question: 'Sind die Produktbilder von Amazon übernommen?',
+		answer:
+			'Nein. Die Produktbilder auf dieser Seite sind lokale, neutrale Bilder ohne Amazon-UI, Logos, Preise oder Sternebewertungen.',
+	},
+	{
+		question: 'Warum sind manche Produktbuttons deaktiviert?',
+		answer:
+			'Ein Button wird erst aktiviert, wenn ein Produktlink sicher geprüft wurde. Ohne geprüfte Verfügbarkeit bleibt der Eintrag ein Platzhalter.',
+	},
+	{
+		question: 'Zeigt die Seite Preise oder Rabatte?',
+		answer:
+			'Nein. Preise, Rabatte und Bewertungen werden nicht erfunden. Konkrete Produktdaten können später nur aus geprüften Quellen ergänzt werden.',
+	},
+	{
+		question: 'Sind Reiseapotheke-Produkte medizinische Empfehlungen?',
+		answer:
+			'Nein. Die Einträge in diesem Bereich beziehen sich nur auf neutrale Aufbewahrung und Organisation, nicht auf medizinische Beratung.',
+	},
+];
+
+const schema = [
+	createWebPageSchema({
+		title,
+		description,
+		path,
+		image: heroImage,
+	}),
+	createFaqSchema(productFaqs),
+];
+---
+
+<BaseLayout title={title} description={description} image={heroImage} canonicalPath={path} schema={schema}>
+	<section class="subhero product-hero">
+		<img
+			src={heroImage}
+			alt="Neutrale Reiseprodukte wie Koffer, Packtaschen, Nackenkissen und Kulturbeutel in sonniger Umgebung"
+			width="1600"
+			height="900"
+		/>
+		<div class="subhero__overlay"></div>
+		<div class="container subhero__content">
+			<p class="eyebrow">Praktisch vorbereitet</p>
+			<h1>Produkte für den Urlaub</h1>
+			<p>{intro}</p>
+		</div>
+	</section>
+
+	<main>
+		<section class="section">
+			<div class="container product-intro-grid">
+				<div class="copy-block">
+					<p class="eyebrow">Reiseprodukte</p>
+					<h2>Praktische Helfer für Flug, Hotel, Strand und Mietwagen</h2>
+					<p>
+						Die Produktliste ist als saubere Affiliate-Struktur vorbereitet. Aktive Amazon-Links werden nur
+						gesetzt, wenn ein Produkt erreichbar, passend und kaufbar geprüft wurde.
+					</p>
+					<p>
+						Aktuell sind {readyProducts.length} Produkte aktiv verlinkt und {placeholderProducts.length} Produkte
+						als Platzhalter angelegt. So bleiben die Karten hilfreich, ohne Preise, Bewertungen oder Rabatte zu
+						erfinden.
+					</p>
+				</div>
+				<aside class="product-affiliate-note">
+					<h2>Affiliate-Hinweis</h2>
+					<p>
+						Diese Seite enthält Partnerlinks, unter anderem zu Amazon. Wenn du über einen solchen Link ein
+						Produkt kaufst, erhalten wir ggf. eine Provision. Für dich entstehen keine Mehrkosten.
+					</p>
+				</aside>
+			</div>
+		</section>
+
+		<section class="section section--sand">
+			<div class="container">
+				<div class="section-heading">
+					<p class="eyebrow">Kategorien</p>
+					<h2>Schneller zu passenden Reiseprodukten</h2>
+					<p>
+						Springe direkt zu den Bereichen, die zu deiner Reiseart passen. Alle Karten nutzen lokale Bilder und
+						zeigen keine erfundenen Amazon-Daten.
+					</p>
+				</div>
+				<nav class="product-category-nav" aria-label="Produktkategorien">
+					{
+						categoryGroups.map((group) => (
+							<a href={`#${group.slug}`}>
+								<strong>{group.products.length}</strong>
+								<span>{group.category}</span>
+							</a>
+						))
+					}
+				</nav>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container product-sections">
+				<div class="section-heading">
+					<p class="eyebrow">Produktgrid</p>
+					<h2>{travelProducts.length} vorbereitete Reiseprodukte</h2>
+					<p>
+						Die Auswahl deckt Packen, Komfort, Technik, Strandtage, Familienurlaub, Mietwagen und Kurztrips ab.
+					</p>
+				</div>
+
+				{
+					categoryGroups.map((group) => (
+						<section class="product-category-group" id={group.slug}>
+							<div class="product-category-group__heading">
+								<h2>{group.category}</h2>
+								<p>{group.products.length} Produkte</p>
+							</div>
+							<div class="product-grid">
+								{group.products.map((product) => <ProductCard product={product} />)}
+							</div>
+						</section>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="section section--blue">
+			<div class="container product-selection-panel">
+				<div class="section-heading section-heading--light">
+					<p class="eyebrow">Auswahlprinzip</p>
+					<h2>So wählen wir Produkte aus</h2>
+				</div>
+				<div class="steps-grid">
+					<article>
+						<span>01</span>
+						<h3>Neutral statt laut</h3>
+						<p>Keine kopierten Anbieterbilder, keine Logos, keine Sternebewertungen und keine Preisversprechen.</p>
+					</article>
+					<article>
+						<span>02</span>
+						<h3>Nützlich im Reisealltag</h3>
+						<p>Die Kategorien orientieren sich an Packen, Flugkomfort, Ordnung, Strand, Hotel und Mobilität vor Ort.</p>
+					</article>
+					<article>
+						<span>03</span>
+						<h3>Links erst nach Prüfung</h3>
+						<p>Amazon-Partnerlinks werden erst aktiviert, wenn ein konkreter Link sauber geprüft wurde.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<Faq faqs={productFaqs} />
+
+		<section class="section section--sand">
+			<div class="container">
+				<div class="section-heading">
+					<p class="eyebrow">Weiterplanen</p>
+					<h2>Passende Reisebereiche</h2>
+				</div>
+				<div class="related-link-list">
+					<a href="/pauschalreisen/">
+						<strong>Pauschalreisen vergleichen</strong>
+						<span>Vor dem Packen Leistungen, Transfer, Gepäck und Verpflegung prüfen.</span>
+					</a>
+					<a href="/mietwagen/">
+						<strong>Mietwagen-Tipps lesen</strong>
+						<span>Praktisch, wenn du vor Ort flexibel bleiben und Ausflüge planen möchtest.</span>
+					</a>
+					<a href="/reisetipps/">
+						<strong>Reisetipps zum Sparen</strong>
+						<span>Mehr Hinweise zu Reisezeit, Nebenkosten, Gepäck und fairen Vergleichen.</span>
+					</a>
+					<a href="/last-minute-urlaub/">
+						<strong>Last-Minute-Urlaub planen</strong>
+						<span>Kurzfristige Reisen mit Blick auf Gepäck, Transfer und Stornobedingungen prüfen.</span>
+					</a>
+					<a href="/urlaub-unter-500-euro/">
+						<strong>Urlaub unter 500 Euro</strong>
+						<span>Budget realistisch rechnen und unnötige Zusatzkosten vermeiden.</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--notice">
+			<div class="container">
+				<AffiliateNotice />
+			</div>
+		</section>
+	</main>
+</BaseLayout>

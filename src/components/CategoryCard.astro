@@ -6,12 +6,13 @@ type Props = {
 	image: string;
 	imageAlt: string;
 	tag?: string;
+	slug?: string;
 };
 
-const { title, href, description, image, imageAlt, tag } = Astro.props;
+const { title, href, description, image, imageAlt, tag, slug } = Astro.props;
 ---
 
-<article class="category-card">
+<article class:list={['category-card', slug === 'produkte-fuer-den-urlaub' && 'category-card--wide']}>
 	<a href={href} aria-label={`${title} öffnen`}>
 		<img src={image} alt={imageAlt} loading="lazy" width="800" height="520" />
 		<div class="category-card__body">

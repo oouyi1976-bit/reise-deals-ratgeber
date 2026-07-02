@@ -26,6 +26,12 @@ export type PageContent = {
 	}[];
 };
 
+const productInternalLink = {
+	href: '/produkte-fuer-den-urlaub/',
+	title: 'Praktische Produkte für den Urlaub ansehen',
+	description: 'Packhilfen, Reiseorganisation und neutrale Produktideen für Flug, Hotel, Strand und Mietwagen.',
+};
+
 export const pageContents: PageContent[] = [
 	{
 		slug: 'last-minute-urlaub',
@@ -69,6 +75,7 @@ export const pageContents: PageContent[] = [
 			},
 		],
 		relatedSlugs: ['pauschalreisen', 'all-inclusive-urlaub', 'urlaub-unter-500-euro', 'strandurlaub-guenstig'],
+		internalLinks: [productInternalLink],
 	},
 	{
 		slug: 'pauschalreisen',
@@ -112,6 +119,7 @@ export const pageContents: PageContent[] = [
 			},
 		],
 		relatedSlugs: ['last-minute-urlaub', 'all-inclusive-urlaub', 'familienurlaub-guenstig', 'strandurlaub-guenstig', 'mietwagen'],
+		internalLinks: [productInternalLink],
 	},
 	{
 		slug: 'all-inclusive-urlaub',
@@ -241,6 +249,7 @@ export const pageContents: PageContent[] = [
 			},
 		],
 		relatedSlugs: ['kurzurlaub', 'staedtereisen-guenstig', 'last-minute-urlaub', 'strandurlaub-guenstig'],
+		internalLinks: [productInternalLink],
 	},
 	{
 		slug: 'staedtereisen-guenstig',
@@ -422,6 +431,7 @@ export const pageContents: PageContent[] = [
 			'staedtereisen-guenstig',
 			'strandurlaub-guenstig',
 		],
+		internalLinks: [productInternalLink],
 	},
 	{
 		slug: 'mietwagen',
@@ -473,6 +483,7 @@ export const pageContents: PageContent[] = [
 		],
 		relatedSlugs: ['pauschalreisen', 'last-minute-urlaub', 'familienurlaub-guenstig'],
 		internalLinks: [
+			productInternalLink,
 			{
 				href: '/reisetipps/',
 				title: 'Reisetipps zum Sparen',
