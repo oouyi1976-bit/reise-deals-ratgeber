@@ -10,16 +10,51 @@ const isReady = product.affiliateStatus === 'ready' && product.affiliateUrl;
 ---
 
 <article class="product-card">
-	<img
-		src={product.image}
-		alt={`${product.title} als neutrales Reiseproduktbild`}
-		loading="lazy"
-		width="1000"
-		height="760"
-	/>
+	{
+		isReady ? (
+			<a
+				class="product-card__media-link"
+				href={product.affiliateUrl}
+				target="_blank"
+				rel="nofollow sponsored noopener noreferrer"
+				aria-label={`${product.title} ansehen`}
+			>
+				<img
+					src={product.image}
+					alt={`${product.title} als neutrales Reiseproduktbild`}
+					loading="lazy"
+					width="1000"
+					height="760"
+				/>
+			</a>
+		) : (
+			<img
+				src={product.image}
+				alt={`${product.title} als neutrales Reiseproduktbild`}
+				loading="lazy"
+				width="1000"
+				height="760"
+			/>
+		)
+	}
 	<div class="product-card__body">
 		<p class="product-card__category">{product.category}</p>
-		<h3>{product.title}</h3>
+		<h3>
+			{
+				isReady ? (
+					<a
+						class="product-card__title-link"
+						href={product.affiliateUrl}
+						target="_blank"
+						rel="nofollow sponsored noopener noreferrer"
+					>
+						{product.title}
+					</a>
+				) : (
+					product.title
+				)
+			}
+		</h3>
 		<p>{product.shortDescription}</p>
 		<dl class="product-card__details">
 			<div>

@@ -463,6 +463,23 @@ h3 {
 	font-size: 21px;
 }
 
+.product-card__media-link {
+	display: block;
+	overflow: hidden;
+}
+
+.product-card__media-link img {
+	transition: transform 180ms ease;
+}
+
+.product-card__media-link:hover img {
+	transform: scale(1.025);
+}
+
+.product-card__title-link:hover {
+	color: var(--color-turquoise-dark);
+}
+
 .product-card__details {
 	display: grid;
 	gap: 10px;
