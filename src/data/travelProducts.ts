@@ -62,8 +62,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Flugreise, Bahnreise und Wochenendtrips",
 		"image": "/travel-product-images/produkt-004.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0GC6YVKKF",
+		"affiliateUrl": "https://www.amazon.de/dp/B0GC6YVKKF?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-005",
@@ -112,8 +114,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Flugreise, Bahnreise und Wochenendtrips",
 		"image": "/travel-product-images/produkt-008.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0DGCF2TR8",
+		"affiliateUrl": "https://www.amazon.de/dp/B0DGCF2TR8?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-009",
@@ -201,8 +205,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Alle, die strukturiert packen möchten",
 		"image": "/travel-product-images/produkt-015.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0FDL1LHM1",
+		"affiliateUrl": "https://www.amazon.de/dp/B0FDL1LHM1?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-016",
@@ -212,8 +218,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Alle, die strukturiert packen möchten",
 		"image": "/travel-product-images/produkt-016.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0CDQ2KYZX",
+		"affiliateUrl": "https://www.amazon.de/dp/B0CDQ2KYZX?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-017",
@@ -223,8 +231,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Alle, die strukturiert packen möchten",
 		"image": "/travel-product-images/produkt-017.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0CSSZPT8V",
+		"affiliateUrl": "https://www.amazon.de/dp/B0CSSZPT8V?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-018",
@@ -286,8 +296,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Flugzeug, Fernbus und längere Wartezeiten",
 		"image": "/travel-product-images/produkt-022.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0FDWLL4XM",
+		"affiliateUrl": "https://www.amazon.de/dp/B0FDWLL4XM?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-023",
@@ -297,8 +309,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Flugzeug, Fernbus und längere Wartezeiten",
 		"image": "/travel-product-images/produkt-023.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0BB1H4FBB",
+		"affiliateUrl": "https://www.amazon.de/dp/B0BB1H4FBB?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-024",
@@ -308,8 +322,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Flugzeug, Fernbus und längere Wartezeiten",
 		"image": "/travel-product-images/produkt-024.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0GWK31TYT",
+		"affiliateUrl": "https://www.amazon.de/dp/B0GWK31TYT?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-025",
@@ -488,8 +504,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Strandurlaub, Pooltage und Badeseen",
 		"image": "/travel-product-images/produkt-038.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B08CY2W22K",
+		"affiliateUrl": "https://www.amazon.de/dp/B08CY2W22K?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-039",
@@ -525,8 +543,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Strandurlaub, Pooltage und Badeseen",
 		"image": "/travel-product-images/produkt-041.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0B41Q5P2Y",
+		"affiliateUrl": "https://www.amazon.de/dp/B0B41Q5P2Y?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-042",
@@ -562,8 +582,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Hotel, Ferienwohnung und Kurzurlaub",
 		"image": "/travel-product-images/produkt-044.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0CJFRWD6G",
+		"affiliateUrl": "https://www.amazon.de/dp/B0CJFRWD6G?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-045",
@@ -662,8 +684,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Kulturbeutel, Handgepäck und Familienreisen",
 		"image": "/travel-product-images/produkt-052.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0CTMW5SH9",
+		"affiliateUrl": "https://www.amazon.de/dp/B0CTMW5SH9?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-053",
@@ -712,8 +736,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Kulturbeutel, Handgepäck und Familienreisen",
 		"image": "/travel-product-images/produkt-056.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0FJM2MVYJ",
+		"affiliateUrl": "https://www.amazon.de/dp/B0FJM2MVYJ?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-057",
@@ -723,8 +749,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Kulturbeutel, Handgepäck und Familienreisen",
 		"image": "/travel-product-images/produkt-057.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B018S4F9XC",
+		"affiliateUrl": "https://www.amazon.de/dp/B018S4F9XC?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-058",
@@ -825,8 +853,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Familien mit Kindern auf Reisen",
 		"image": "/travel-product-images/produkt-065.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B071PDTV7Q",
+		"affiliateUrl": "https://www.amazon.de/dp/B071PDTV7Q?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-066",
@@ -875,8 +905,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Mietwagen, Roadtrips und Ausflüge vor Ort",
 		"image": "/travel-product-images/produkt-069.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0FC21D5CS",
+		"affiliateUrl": "https://www.amazon.de/dp/B0FC21D5CS?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-070",
@@ -886,8 +918,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Mietwagen, Roadtrips und Ausflüge vor Ort",
 		"image": "/travel-product-images/produkt-070.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0H36GX8GT",
+		"affiliateUrl": "https://www.amazon.de/dp/B0H36GX8GT?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-071",
@@ -936,8 +970,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Mietwagen, Roadtrips und Ausflüge vor Ort",
 		"image": "/travel-product-images/produkt-074.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0GPCMPYQY",
+		"affiliateUrl": "https://www.amazon.de/dp/B0GPCMPYQY?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-075",
@@ -986,8 +1022,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Reisepass, Bordkarten und wichtige Unterlagen",
 		"image": "/travel-product-images/produkt-078.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0GKGF2PS8",
+		"affiliateUrl": "https://www.amazon.de/dp/B0GKGF2PS8?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-079",
@@ -1010,8 +1048,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Reisepass, Bordkarten und wichtige Unterlagen",
 		"image": "/travel-product-images/produkt-080.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B09HP4W4CW",
+		"affiliateUrl": "https://www.amazon.de/dp/B09HP4W4CW?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-081",
@@ -1034,8 +1074,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Reisepass, Bordkarten und wichtige Unterlagen",
 		"image": "/travel-product-images/produkt-082.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0F47LJ6PF",
+		"affiliateUrl": "https://www.amazon.de/dp/B0F47LJ6PF?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-083",
@@ -1045,8 +1087,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Spart Suchzeit, reduziert Packstress und hilft, unterwegs besser vorbereitet zu sein.",
 		"bestFor": "Reisepass, Bordkarten und wichtige Unterlagen",
 		"image": "/travel-product-images/produkt-083.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0FJ8RDB6M",
+		"affiliateUrl": "https://www.amazon.de/dp/B0FJ8RDB6M?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-084",
@@ -1173,8 +1217,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Sammelt kleine Reiseutensilien an einem festen Ort und macht den Kulturbeutel übersichtlicher.",
 		"bestFor": "Geordnete Aufbewahrung von Reise-Zubehör",
 		"image": "/travel-product-images/produkt-093.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0DJRHTV3H",
+		"affiliateUrl": "https://www.amazon.de/dp/B0DJRHTV3H?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-094",
@@ -1184,8 +1230,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Sammelt kleine Reiseutensilien an einem festen Ort und macht den Kulturbeutel übersichtlicher.",
 		"bestFor": "Geordnete Aufbewahrung von Reise-Zubehör",
 		"image": "/travel-product-images/produkt-094.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0G2S9KXJ4",
+		"affiliateUrl": "https://www.amazon.de/dp/B0G2S9KXJ4?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-095",
@@ -1208,8 +1256,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Sammelt kleine Reiseutensilien an einem festen Ort und macht den Kulturbeutel übersichtlicher.",
 		"bestFor": "Geordnete Aufbewahrung von Reise-Zubehör",
 		"image": "/travel-product-images/produkt-096.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0F21R47NX",
+		"affiliateUrl": "https://www.amazon.de/dp/B0F21R47NX?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-097",
@@ -1219,8 +1269,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Sammelt kleine Reiseutensilien an einem festen Ort und macht den Kulturbeutel übersichtlicher.",
 		"bestFor": "Geordnete Aufbewahrung von Reise-Zubehör",
 		"image": "/travel-product-images/produkt-097.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0F292H4TC",
+		"affiliateUrl": "https://www.amazon.de/dp/B0F292H4TC?tag=epic05e-21"
 	},
 	{
 		"id": "produkt-098",
@@ -1256,8 +1308,10 @@ export const travelProducts: TravelProduct[] = [
 		"whyUseful": "Sammelt kleine Reiseutensilien an einem festen Ort und macht den Kulturbeutel übersichtlicher.",
 		"bestFor": "Geordnete Aufbewahrung von Reise-Zubehör",
 		"image": "/travel-product-images/produkt-100.webp",
-		"affiliateStatus": "placeholder",
-		"buttonText": "Produkt folgt"
+		"affiliateStatus": "ready",
+		"buttonText": "Produkt ansehen",
+		"asin": "B0CSD3WLV1",
+		"affiliateUrl": "https://www.amazon.de/dp/B0CSD3WLV1?tag=epic05e-21"
 	}
 ];
 
